@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './AreaDetails.css';
-import heroBackground from '../../media/hero-background.jpg';
+import heroBackground from '../../media/hero-background.png';
 import contactImage from '../../media/contact.jpg';
 import { areas } from '../../data/areas';
 import { Building2, Building, Zap, Car, Wrench, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { phoneNumbers } from '../../data/phoneNumbers';
 const AreaDetails = () => {
     const { areaName } = useParams();
     const navigate = useNavigate();
@@ -263,12 +264,12 @@ const AreaDetails = () => {
                         اتصل بنا فوراً وسيصل فريقنا إليك في {displayName} خلال دقائق!
                     </p>
                     <div className="emergency-buttons">
-                        <a href="tel:+2001055888893" className="emergency-button primary">
+                        <a href={`tel:+2${phoneNumbers[0]}`} className="emergency-button primary">
                             <Phone color='black' style={
                                 {
                                     marginBottom: '-6px'
                                 }
-                            } /> اتصل الآن: 01055888893
+                            } /> اتصل الآن
                         </a>
                         <a
                             href={`https://wa.me/2001055888893?text=${encodeURIComponent(`أحتاج خدمة ونش في ${displayName}`)}`}

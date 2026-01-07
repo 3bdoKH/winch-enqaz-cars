@@ -1,7 +1,8 @@
 import React from 'react';
 import './Hero.css';
-import heroBackground from '../../media/hero-background.jpg';
+import heroBackground from '../../media/hero-background.png';
 import { ClockCheck, PhoneCall } from 'lucide-react';
+import { phoneNumbers } from '../../data/phoneNumbers';
 const Hero = () => {
     const scrollToContent = () => {
         window.scrollBy({
@@ -50,8 +51,8 @@ const Hero = () => {
                     </div>
 
                     <div className="banner-item phone">
-                        <a href="tel:01055888893" className="phone-number">
-                            01055888893
+                        <a href={`tel:${phoneNumbers[0]}`} className="phone-number">
+                            {phoneNumbers[0]}
                         </a>
                     </div>
 

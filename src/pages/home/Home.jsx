@@ -5,6 +5,7 @@ import WhatWeOffer from '../../components/what-we-offer/WhatWeOffer';
 import Stats from '../../components/stats/Stats';
 import Partners from '../../components/partners/Partners';
 import Services from '../../components/services/Services';
+import CoveredAreas from '../../components/covered-areas/CoveredAreas';
 import CallToAction from '../../components/call-to-action/CallToAction';
 import Blog from '../../components/blog/Blog';
 import Testimonials from '../../components/testimonials/Testimonials';
@@ -19,6 +20,7 @@ const Home = () => {
             <Stats />
             <Partners />
             <Services />
+            <CoveredAreas />
             <CallToAction />
             <Blog />
             <Testimonials />

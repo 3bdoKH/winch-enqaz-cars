@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Articles.css';
-import heroBackground from '../../media/hero-background.jpg';
+import heroBackground from '../../media/hero-background.png';
 import { articles } from '../../data/articles';
 import { Car, Wrench, Zap, Truck, Book, FileText, Search, Calendar, Clock, Pen, Eye } from 'lucide-react';
+import { phoneNumbers } from '../../data/phoneNumbers';
 const ArticlesPage = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
@@ -188,8 +189,8 @@ const ArticlesPage = () => {
                         تواصل معنا الآن وسنكون سعداء بالإجابة على جميع أسئلتك حول خدماتنا.
                     </p>
                     <div className="cta-buttons">
-                        <a href="tel:+2001055888893" className="cta-button primary">
-                            اتصل بنا: 01055888893
+                        <a href={`tel:+2${phoneNumbers[0]}`} className="cta-button primary">
+                            اتصل بنا
                         </a>
                         <a href="/contact" className="cta-button secondary">
                             أرسل رسالة

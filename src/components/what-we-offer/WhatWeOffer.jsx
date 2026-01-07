@@ -1,6 +1,6 @@
 import React from 'react';
 import './WhatWeOffer.css';
-import truckImage from '../../media/what-we-offer.png';
+import truckImage from '../../media/what-we-offer2.png';
 
 const WhatWeOffer = () => {
     const features = [

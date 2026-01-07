@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import heroBackground from '../../media/hero-background.jpg';
+import heroBackground from '../../media/hero-background.png';
 import contactImage from '../../media/contact.jpg';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Zap } from 'lucide-react';
+import { phoneNumbers } from '../../data/phoneNumbers';
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -32,8 +33,8 @@ const Contact = () => {
             `*الرسالة:* ${formData.message}`;
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappNumber = '+2001055888893';
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        const whatsappURL = `https://wa.me/+2${phoneNumbers[0]}?text=${encodedMessage}`;
 
         window.open(whatsappURL, '_blank');
     };
@@ -47,8 +48,8 @@ const Contact = () => {
         {
             icon: <Phone color='var(--accent)' style={{ marginBottom: '-6px' }} />,
             title: 'الهاتف',
-            details: ['01055888893', '24/7 طوارئ'],
-            link: 'tel:+2001055888893'
+            details: [`${phoneNumbers[0]}`, '24/7 طوارئ'],
+            link: `tel:+2${phoneNumbers[0]}`
         },
         {
             icon: <Mail color='var(--accent)' style={{ marginBottom: '-6px' }} />,
@@ -91,13 +92,15 @@ const Contact = () => {
             {/* Quick Contact Bar */}
             <section className="quick-contact">
                 <div className="quick-contact-container">
-                    <div className="quick-contact-item">
-                        <span className="quick-icon"><Phone color='var(--accent)' style={{ marginBottom: '-6px' }} /></span>
-                        <div className="quick-info">
-                            <h4>اتصل الآن</h4>
-                            <a href="tel:+2001055888893">01055888893</a>
+                    {phoneNumbers.map((number, index) => (
+                        <div className="quick-contact-item">
+                            <span className="quick-icon"><Phone color='var(--accent)' style={{ marginBottom: '-6px' }} /></span>
+                            <div className="quick-info">
+                                <h4>اتصل الآن</h4>
+                                <a href={`tel:+2${number}`}>{number}</a>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                     <div className="quick-contact-item">
                         <span className="quick-icon"><MessageCircle color='var(--accent)' style={{ marginBottom: '-6px' }} /></span>
                         <div className="quick-info">
@@ -263,8 +266,8 @@ const Contact = () => {
                     <p className="emergency-description">
                         إذا كنت بحاجة إلى مساعدة فورية، اتصل بنا الآن! فريقنا متاح 24/7 للاستجابة لحالات الطوارئ.
                     </p>
-                    <a href="tel:+2001055888893" className="emergency-button">
-                        اتصل للطوارئ: 01055888893
+                    <a href={`tel:+2${phoneNumbers[0]}`} className="emergency-button">
+                        اتصل للطوارئ
                     </a>
                 </div>
             </section>

@@ -4,6 +4,7 @@ import { Mail } from 'lucide-react';
 import { MapPin } from 'lucide-react';
 import { Phone } from 'lucide-react';
 import { Clock } from 'lucide-react';
+import { phoneNumbers } from '../../data/phoneNumbers';
 const Footer = () => {
     const [email, setEmail] = useState('');
 
@@ -92,12 +93,14 @@ const Footer = () => {
                                 </span>
                                 <a href="mailto:support@towing.com">support@towing.com</a>
                             </li>
-                            <li>
-                                <span className="contact-icon">
-                                    <Phone />
-                                </span>
-                                <a href="tel:+2001055888893">01055888893</a>
-                            </li>
+                            {phoneNumbers.map((phoneNumber, index) => (
+                                <li key={index}>
+                                    <span className="contact-icon">
+                                        <Phone />
+                                    </span>
+                                    <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                                </li>
+                            ))}
                             <li>
                                 <span className="contact-icon">
                                     <Clock />

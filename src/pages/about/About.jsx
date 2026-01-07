@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import heroBackground from '../../media/hero-background.jpg';
+import heroBackground from '../../media/hero-background.png';
 import counterImage from '../../media/counter.jpeg';
 import towedCar from '../../media/towed-car.png';
 import tools from '../../media/tools.png';
@@ -8,6 +8,7 @@ import fuel from '../../media/fuel.png';
 import battery from '../../media/battery.png';
 import { ArrowBigUpDash, ShieldBan, HandCoins, Target, Handshake, Rocket, MapPin, Trophy, ShieldCheck } from 'lucide-react';
 import { Star } from 'lucide-react';
+import { phoneNumbers } from '../../data/phoneNumbers';
 const About = () => {
     const values = [
         {
@@ -67,10 +68,13 @@ const About = () => {
     ];
 
     const serviceAreas = [
-        'القاهرة الكبرى',
-        'الجيزة',
-        'الإسكندرية',
-        'المدن الجديدة'
+        'اكتوبر',
+        'الجيزه',
+        'اسكندريه',
+        'الحمام',
+        'العلمين',
+        'الساحل الشمالي',
+        'مرسى مطروح',
     ];
 
     const workProcess = [
@@ -296,7 +300,7 @@ const About = () => {
                         {serviceAreas.map((area, index) => (
                             <div key={index} className="area-badge">
                                 <span className="badge-icon">
-                                    <MapPin color='#FDB913' />
+                                    <MapPin color='var(--accent)' />
                                 </span>
                                 <span className="badge-text">{area}</span>
                             </div>
@@ -435,7 +439,7 @@ const About = () => {
                         نحن هنا لخدمتك على مدار الساعة. اتصل بنا الآن وسنصل إليك في أسرع وقت ممكن.
                     </p>
                     <div className="cta-buttons">
-                        <a href="tel:+2001055888893" className="cta-button primary">
+                        <a href={`tel:+2${phoneNumbers[0]}`} className="cta-button primary">
                             اتصل بنا الآن
                         </a>
                         <a href="/contact" className="cta-button secondary">
