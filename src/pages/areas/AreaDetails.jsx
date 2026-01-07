@@ -246,7 +246,7 @@ const AreaDetails = () => {
                                         }
                                     }
                                 /></span>
-                                <span className="nearby-name">ونش {nearbyArea}</span>
+                                <span className="nearby-name">ونش انقاذ {nearbyArea}</span>
                             </a>
                         ))}
                     </div>
