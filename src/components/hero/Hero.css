@@ -82,6 +82,44 @@
   margin: 0 auto;
 }
 
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  top: 110px;
+  left: -170px;
+  z-index: 10;
+}
+
+
+.discount-circle {
+  width: 500px;
+  height: 100px;
+  background: var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(255, 193, 7, 0.6);
+  border: 4px solid #FFFFFF;
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.discount-percent {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--light-text);
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.discount-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--light-text);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 /* Scroll Indicator */
 .scroll-indicator {
   display: flex;
@@ -401,6 +439,7 @@
   .scroll-indicator p {
     font-size: 13px;
   }
+
 }
 
 /* Mobile Portrait */
@@ -483,6 +522,11 @@
 
   .scroll-indicator p {
     font-size: 12px;
+  }
+
+  .discount-badge {
+    top: 80px;
+    left: -100px;
   }
 }
 

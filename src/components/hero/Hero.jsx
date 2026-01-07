@@ -19,6 +19,14 @@ const Hero = () => {
             </div>
 
             <div className="hero-content">
+                {/* Discount Badge */}
+                <div className="discount-badge">
+                    <div className="discount-circle">
+                        <span className="discount-percent">50%</span>
+                        <span className="discount-text">خصم</span>
+                    </div>
+                </div>
+
                 <div className="hero-text">
                     <h1 className="hero-title">
                         نقدم أعلى جودة من
@@ -45,7 +53,7 @@ const Hero = () => {
                         </div>
                         <div className="banner-text">
                             <span className="banner-label">أقل من</span>
-                            <span className="banner-highlight"> 30 دقيقة</span>
+                            <span className="banner-highlight"> 20 دقيقة</span>
                             <span className="banner-label"> وصول</span>
                         </div>
                     </div>
