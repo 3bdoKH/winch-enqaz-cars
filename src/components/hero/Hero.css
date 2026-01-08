@@ -449,7 +449,8 @@
   }
 
   .hero-background img {
-    object-position: right;
+    object-position: center;
+    object-fit: cover;
   }
 
   .hero-content {
